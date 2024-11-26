@@ -435,7 +435,7 @@ class SARibbonBar(QMenuBar):
         """隐藏上下文标签"""
         ishide = False
         for i, category in enumerate(self.m_d.currentShowingContextCategory):
-            if context.compare(category.contextCategory):
+            if context == category.contextCategory:
                 indexs = category.tabPageIndex
                 for index in reversed(indexs):
                     self.m_d.ribbonTabBar.removeTab(index)
