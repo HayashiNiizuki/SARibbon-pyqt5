@@ -572,9 +572,10 @@ class SARibbonBar(QMenuBar):
 
     def raiseCategory(self, category: SARibbonCategory):
         """确保标签显示出来，tab并切换到对应页"""
-        index = self.m_d.stackedContainerWidget.indexOf(category)
-        if index >= 0:
-            self.setCurrentIndex(index)
+        for i in range(self.m_d.ribbonTabBar.count()):
+            tabData: _SARibbonTabData = self.m_d.ribbonTabBar.tabData(i)
+            if tabData and tabData.category == category:
+                self.setCurrentIndex(i)
 
     def isTwoRowStyle(self) -> bool:
         """判断当前的样式是否为两行"""
