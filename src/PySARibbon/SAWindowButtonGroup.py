@@ -206,15 +206,15 @@ class SAWindowButtonGroup(QWidget):
         x = 0
         if self.buttonMinimize:
             w = (self.mMinStretch / tw) * size.width()
-            self.buttonMinimize.setGeometry(x, 0, w, size.height())
+            self.buttonMinimize.setGeometry(int(x), 0, int(w), size.height())
             x += w
         if self.buttonMaximize:
             w = (self.mMaxStretch / tw) * size.width()
-            self.buttonMaximize.setGeometry(x, 0, w, size.height())
+            self.buttonMaximize.setGeometry(int(x), 0, int(w), size.height())
             x += w
         if self.buttonClose:
             w = (self.mCloseStretch / tw) * size.width()
-            self.buttonClose.setGeometry(x, 0, w, size.height())
+            self.buttonClose.setGeometry(int(x), 0, int(w), size.height())
 
     def sizeHint(self) -> QSize:
         w = 0
